@@ -1,0 +1,23 @@
+body {
+	text-align: center;
+	background-color: silver;
+}
+table{
+	margin-top: 50px;
+}
+h3{
+	position: relative;
+	bottom: 10px;
+}
+
+.header{
+	margin-top: 15px;
+}
+.wrapp{
+	margin: 0 150px;
+	max-width: 70%;
+
+}
+input:[type="button"]{
+	color: blue;
+}

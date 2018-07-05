@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tugas2</title>
+	<link rel="stylesheet" type="text/css" href="../tugas2/bootstrap/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="hias.css">
+</head>
+<body>
+<div class="header">
+	<div class="wrapp">
+		<h2>Web Application for count values</h2>
+		<center><table border="3px" style="width: 100%;" cellspacing="2px" cellpadding="2px">
+			<tr>
+				<td colspan="4">
+				<center><h3>Menghitung index prestasi</h3></center>
+				</td>
+				<!-- lets make the values -->
+				<tr>
+					<form name="myForm">
+					<td>Quis<br>(10%) : <input type="text" name="n1" placeholder="Nilai"></td>
+					<td>Tugas<br>(20%) : <input type="text" name="n2" placeholder="Nilai"></td>
+					<td>UTS<br>(30%) : <input type="text" name="n3" placeholder="Nilai"></td>
+					<td>UAS<br>(40%) : <input type="text" name="n4" placeholder="Nilai"></td>
+				</tr>
+
+				<tr>
+					<td colspan="4" rowspan="2">
+						<center>
+							<input type="button" value="Hitung" onclick="fungsi()">
+							<input type="reset" value="Ulang">
+				</tr>
+				<tr></tr>
+				<tr>
+					<td colspan="2" rowspan="2" align="center" style="padding: 10px;">Predikat : 
+					<input type="text" name="bottom1"></td>
+
+					<td colspan="2" rowspan="2" align="center" style="padding: 10px;">Keterangan : 
+					<input type="text" name="bottom2"></td>
+				</tr>
+
+			</form>
+		</table>
+</center>
+<script>
+function fungsi()
+{
+	var Nilai1 =parseFloat(document.myForm.n1.value);
+	var Nilai2 =parseFloat(document.myForm.n2.value);
+	var Nilai3 =parseFloat(document.myForm.n3.value);
+	var Nilai4 =parseFloat(document.myForm.n4.value);
+	var Hasil = (Nilai1 * 0.10)+(Nilai2 * 0.20)+(Nilai3 * 0.30)+(Nilai4 * 0.40);
+	if ((Hasil == 0)&&(Hasil <= 50))
+		{
+			grade = "F";
+			keterangan = "Lulus dengan nilai <= 50";
+		}
+	else if ((Hasil > 50)&&(Hasil <= 60))
+		{
+			grade = "E";
+			keterangan = "Lulus dengan nilai <= 60";
+		}
+	else if ((Hasil > 60)&&(Hasil <= 70))
+		{
+			grade = "D";
+			keterangan = "Lulus dengan nilai <= 70";
+		}
+	else if ((Hasil > 70)&&(Hasil <= 80))
+		{
+			grade = "C";
+			keterangan = "Lulus dengan nilai <= 80";
+		}
+	else if ((Hasil >80)&&(Hasil <= 90))
+		{
+			grade = "B";
+			keterangan = "Lulus dengan nilai <= 90";
+		}
+	else if ((Hasil > 90)&&(Hasil <= 100))
+		{
+			grade = "A";
+			keterangan = "Lulus dengan nilai yang sangad tinggi";
+		}
+	else
+		{
+			grade ="";
+			keterangan = "Nilai salah bossq";
+		}
+	
+	document.myForm.bottom1.value=grade;
+	document.myForm.bottom2.value=keterangan;
+}
+
+</script>
+</body>
+</html>
